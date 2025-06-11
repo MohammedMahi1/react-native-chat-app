@@ -3,6 +3,7 @@ import { View, ViewComponent, ViewProps } from 'react-native'
 import { cva, VariantProps } from "class-variance-authority"
 import { twMerge } from 'tailwind-merge'
 import { cn } from '@/lib/cn'
+import { useColorScheme } from 'react-native';
 const variants = cva(
   [
     'px-10 ',
@@ -27,7 +28,7 @@ type ContainerProps = {
 } & ViewProps & VariantProps<typeof variants>
 const Container = ({ containing, children, className, ...rest }: ContainerProps) => {
   return (
-    <View className={cn(variants({ containing, className }))} {...rest}>
+    <View className={cn(variants({ containing, className, }))} {...rest}>
       {children}
     </View>
   )
