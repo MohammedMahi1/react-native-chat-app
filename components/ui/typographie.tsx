@@ -5,30 +5,37 @@ import { twMerge } from "tailwind-merge";
 
 
 type TypographieProps = {
-    children:ReactNode;
+    children: ReactNode;
 } & TextProps
 
-const colorSchemeHandler = ()=>{
+const colorSchemeHandler = () => {
     const color = useColorScheme()
-    if(color === "dark"){
+    if (color === "dark") {
         return "text-white"
-    }else{
+    } else {
         return "text-black"
     }
 }
-const H1 = ({children,...rest}:TypographieProps) =>{
-    return(
-        <Text {...rest} className={twMerge(colorSchemeHandler(),"text-4xl")}>
+const H1 = ({ children, ...rest }: TypographieProps) => {
+    return (
+        <Text {...rest} className={twMerge(colorSchemeHandler(), "text-4xl")}>
             {children}
-        </Text> 
+        </Text>
     )
 }
-const Span = ({children,...rest}:TypographieProps) =>{
-    return(
+const Span = ({ children, ...rest }: TypographieProps) => {
+    return (
         <Text {...rest} className={colorSchemeHandler()}>
             {children}
-        </Text> 
+        </Text>
+    )
+}
+const Label = ({ children, className ,...rest }: TypographieProps) => {
+    return (
+        <Text {...rest} className={className}>
+            {children}
+        </Text>
     )
 }
 
-export {Span,H1}
+export { Span, H1, Label }
