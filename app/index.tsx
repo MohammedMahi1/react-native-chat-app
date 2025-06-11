@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 
 const index = () => {
   return (
-    <Container>
+    <Container >
         <Text className='text-white'>Index</Text>
     </Container>
   )
