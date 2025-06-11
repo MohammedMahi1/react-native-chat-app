@@ -18,7 +18,7 @@ const colorSchemeHandler = ()=>{
 }
 const H1 = ({children,...rest}:TypographieProps) =>{
     return(
-        <Text {...rest} className={twMerge(colorSchemeHandler(),"text-2xl")}>
+        <Text {...rest} className={twMerge(colorSchemeHandler(),"text-4xl")}>
             {children}
         </Text> 
     )
