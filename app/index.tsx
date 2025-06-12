@@ -7,20 +7,25 @@ import React from 'react'
 
 const index = () => {
     return (
-        <Container className='h-[100vh] flex items-center justify-center'>
-            <Box className='items-center justify-center gap-8 w-full'>
-                <H1 className='font-bold text-center text-6xl'>Welecome to MangoChat </H1>
-                <Span className='text-center'>is a chat app developed with react native and larave.</Span>
-                <Button>
-                    <Link href={"/auth/login"}>
-                        Get Started
-                    </Link>
-                </Button>
-                <Button variant={"outline"}>
-                    <Link href={"/auth"}>
-                        Add an existing account
-                    </Link>
-                </Button>
+        <Container className='h-[100vh] flex items-center justify-center py-20'>
+            <Box className='items-center justify-between w-full h-full'>
+                <Box className='w-full gap-5'>
+                    <H1 className='font-bold text-center text-6xl'>Welecome to MangoChat </H1>
+                    <Span className='text-center'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur molestias accusamus voluptates mollitia veritatis odit quia non nisi alias, similique beatae dolorem nulla harum quo cumque numquam illo blanditiis dolores.</Span>
+                </Box>
+
+                <Box className='items-center justify-center w-full gap-10'>
+                    <Button>
+                        <Link href={"/auth/login"}>
+                            Get Started
+                        </Link>
+                    </Button>
+                    <Button variant={"outline"}>
+                        <Link href={"/auth"}>
+                            Add an existing account
+                        </Link>
+                    </Button>
+                </Box>
             </Box>
         </Container>
     )
