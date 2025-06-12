@@ -2,6 +2,7 @@ import Box from '@/components/ui/box'
 import Button from '@/components/ui/button'
 import Container from '@/components/ui/container'
 import { H1, Span } from '@/components/ui/typographie'
+import { Link } from 'expo-router'
 import React from 'react'
 
 const index = () => {
@@ -11,10 +12,14 @@ const index = () => {
                 <H1 className='font-bold text-center text-6xl'>Welecome to MangoChat </H1>
                 <Span className='text-center'>is a chat app developed with react native and larave.</Span>
                 <Button>
+                    <Link href={"/auth/login"}>
                         Get Started
+                    </Link>
                 </Button>
                 <Button variant={"outline"}>
+                    <Link href={"/auth"}>
                         Add an existing account
+                    </Link>
                 </Button>
             </Box>
         </Container>
