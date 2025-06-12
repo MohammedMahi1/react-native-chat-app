@@ -16,23 +16,23 @@ const colorSchemeHandler = () => {
         return "text-black"
     }
 }
-const H1 = ({ children, ...rest }: TypographieProps) => {
+const H1 = ({ children,className, ...rest }: TypographieProps) => {
     return (
-        <Text {...rest} className={twMerge(colorSchemeHandler(), "text-4xl")}>
+        <Text className={twMerge(colorSchemeHandler(), "text-4xl",className)} {...rest} >
             {children}
         </Text>
     )
 }
-const Span = ({ children, ...rest }: TypographieProps) => {
+const Span = ({ children,className, ...rest }: TypographieProps) => {
     return (
-        <Text {...rest} className={colorSchemeHandler()}>
+        <Text className={twMerge(colorSchemeHandler(),className)}{...rest} >
             {children}
         </Text>
     )
 }
 const Label = ({ children, className ,...rest }: TypographieProps) => {
     return (
-        <Text {...rest} className={className}>
+        <Text  className={className} {...rest}>
             {children}
         </Text>
     )
