@@ -3,4 +3,7 @@ import { drizzle } from 'drizzle-orm/expo-sqlite';
 
 const expo = SQLite.openDatabaseSync('db.db');
 
-const db = drizzle(expo);
+
+export const useDb = ()=>{
+    return drizzle(expo);
+}
