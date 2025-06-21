@@ -23,7 +23,12 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="auth/index"/>
-        <Stack.Screen name="auth/login"/>
+        <Stack.Screen name="auth/login" options={{headerShown:false,
+          gestureEnabled:true,
+          gestureDirection:"horizontal",
+          animation:"slide_from_bottom",
+          fullScreenGestureEnabled:true
+        }}/>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

@@ -14,9 +14,11 @@ const index = () => {
                 </Box>
 
                 <Box className='items-center justify-center w-full gap-10'>
+                    <Link href='/auth' asChild>
                     <Button>
                         Get Started
                     </Button>
+                    </Link>
                     <Link href='/auth/login' asChild>
                         <Button variant={"outline"} >
                             Add an existing account
