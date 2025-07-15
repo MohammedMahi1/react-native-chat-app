@@ -7,7 +7,7 @@ const OnBoard = () => {
   return (
     <Container>
         <Text style={{color: 'red'}}>OnBoard</Text>
-        <Button>Let's Go</Button>
+        <Button >Let's Go</Button>
     </Container>
   )
 }
