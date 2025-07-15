@@ -1,6 +1,7 @@
 import { useTheme } from '@react-navigation/native';
 import React from 'react'
 import { Pressable, PressableProps, StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native'
+import { styleMerge } from 'utils/styleMerge';
 import { sva } from 'utils/sva';
 const styles = StyleSheet.create({
     base:{
@@ -55,7 +56,7 @@ const Button = ({ children, ...rest }: ButtonProps) => {
     return (
         <Pressable  style={buttonVariants({variant:'countain'})}>
             {
-                typeof children === 'string' ? <Text style={textVariants({size:'sm'})}>{children}</Text> : children
+                typeof children === 'string' ? <Text style={styleMerge(textVariants({size:'sm'}),{color:"red"})}>{children}</Text> : children
             }
         </Pressable>
     )
