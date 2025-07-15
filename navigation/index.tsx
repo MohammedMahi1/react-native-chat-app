@@ -1,31 +1,27 @@
-import { createStaticNavigation, StaticParamList } from '@react-navigation/native';
+
 import { createStackNavigator } from '@react-navigation/stack';
-import Overview from '../screens/overview';
-import Details from '../screens/details';
-import { BackButton } from '../components/BackButton';
+import OnBoard from 'screens/onBoard';
+import TabsNavigator from './tabs';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Stack = createStackNavigator({
-  screens: {
-    Overview: {
-      screen: Overview,
-    },
-    Details: {
-      screen: Details,
-      options: ({ navigation }) => ({
-        headerLeft: () => <BackButton onPress={navigation.goBack} />,
-      }),
-    },
-  },
-});
+const Stack = createStackNavigator();
 
-type RootNavigatorParamList = StaticParamList<typeof Stack>;
 
-declare global {
-  namespace ReactNavigation {
-    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-    interface RootParamList extends RootNavigatorParamList {}
-  }
-}
-
-const Navigation = createStaticNavigation(Stack);
+const Navigation = () => {
+  return (
+    <Stack.Navigator 
+    screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarStyle: {
+        position: 'absolute',
+        borderTopWidth: 0,
+        elevation: 0, // remove shadow on Android
+      },
+    })}
+    >
+        <Stack.Screen name="OnBoard" component={OnBoard} />
+        <Stack.Screen name="TabsNavigator" component={TabsNavigator} />
+    </Stack.Navigator>
+  );
+};
 export default Navigation;

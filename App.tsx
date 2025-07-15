@@ -1,14 +1,21 @@
-import { DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { useColorScheme } from 'react-native';
-import { useMemo } from 'react';
-
+import { DefaultTheme, DarkTheme, NavigationContainer } from '@react-navigation/native';
+import {  Platform, useColorScheme } from 'react-native';
+import { useEffect, useMemo } from 'react';
 import 'react-native-gesture-handler';
-
+import * as NavigationBar from 'expo-navigation-bar';
 import Navigation from './navigation';
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import TabsNavigator from 'navigation/tabs';
+import { StatusBar } from 'expo-status-bar';
 export default function App() {
-  const colorScheme = useColorScheme();
-  const theme = useMemo(() => (colorScheme === 'dark' ? DarkTheme : DefaultTheme), [colorScheme]);
-
-  return <Navigation theme={theme} />;
+  const scheme = useColorScheme();
+  NavigationBar.setBackgroundColorAsync(scheme === 'dark' ? '#000000' : '#ffffff');
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <StatusBar backgroundColor="transparent"  />
+        <Navigation />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
