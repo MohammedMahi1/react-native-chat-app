@@ -1,19 +1,21 @@
 
 import { ReactNode } from 'react'
-import { SafeAreaView, ScrollView, ScrollViewProps, StyleSheet, View } from 'react-native'
+import { ScrollView, ScrollViewProps, StyleSheet, useColorScheme, View } from 'react-native'
+import { styleMerge } from 'utils/styleMerge';
 
 
-type ContainerProps = ScrollViewProps & {
+type ContainerProps = ScrollViewProps&{
     children:ReactNode;
     scrollEnabled?:boolean;
 } 
 const Container = ({children,style,scrollEnabled=false,...rest}:ContainerProps) => {
+    const scheme = useColorScheme();
   return (
-      <SafeAreaView style={{flex:1}}>
-    <ScrollView keyboardShouldPersistTaps='handled' contentContainerStyle={[StyleContainer.container,style]} scrollEnabled={scrollEnabled} {...rest} >
+    <ScrollView keyboardShouldPersistTaps='handled'  contentContainerStyle={{flex:1}} scrollEnabled={scrollEnabled} {...rest} >
+      <View style={styleMerge(StyleContainer.container,style,{backgroundColor:scheme === 'dark' ? '#000000' : '#ffffff'}    )} >
         {children}
+      </View>
     </ScrollView>
-      </SafeAreaView>
   )
 }
 

@@ -1,16 +1,23 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { ReactNode } from 'react'
-import { Text, TextProps } from 'react-native'
+import  { ReactNode } from 'react'
+import { Linking, Text, TextProps } from 'react-native'
 
 type LinkProps = {
     children:ReactNode;
-    href:string;
+    href?:string;
 } & TextProps
 
 const Link = ({children,href,...rest}:LinkProps) => {
     const nav = useNavigation();
+    const onPress = () => {
+      if(href?.slice(0,4) === 'http'){
+        Linking.openURL(href);
+      }else{
+        nav.navigate(href as never);
+      }
+    }
   return (
-    <Text onPress={()=>nav.navigate(href)} style={{textDecorationLine:'underline'}} {...rest}>
+    <Text onPress={onPress} style={{textDecorationLine:'underline'}} {...rest}>
         {children}
     </Text>
   )
