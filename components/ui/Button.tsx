@@ -4,6 +4,7 @@ import { Pressable, PressableProps, StyleSheet, Text, TouchableOpacity, useColor
 import { styleMerge } from 'utils/styleMerge';
 import sva, {  VariantProps } from 'utils/sva';
 
+//Styles
 const styles = StyleSheet.create({
     base: {
         paddingVertical: 12,
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
     },
 })
 
+//Button Variants
 const buttonVariants = sva({
     base: styles.base,
     variants: {
@@ -46,6 +48,7 @@ const buttonVariants = sva({
     },
 })
 
+//Text Variants
 const textVariants = sva({
     base: styles.text,
     variants: {
@@ -60,6 +63,7 @@ const textVariants = sva({
     },
 })
 
+//Button Props
 type ButtonProps = {
     children: React.ReactNode
 } & PressableProps & VariantProps<typeof buttonVariants> & VariantProps<typeof textVariants>
@@ -70,6 +74,7 @@ const Button = ({ children,variant = 'contain',size = 'md',...rest  }: ButtonPro
     let textColor = undefined;
     let borderColor = undefined;
 
+    //Dynamic Color Logic
     if (variant === 'contain') {
         if (theme === 'dark') {
             backgroundColor = '#ffffff';
