@@ -10,12 +10,11 @@ import BottomModal from 'components/content/BottomModal'
 import Box from 'components/Box'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
 import IconTip from 'components/ui/IconTip'
-const OnBoard = () => {
-  const theme = useColorScheme()
-  const [isOpen, setIsOpen] = useState(false)
-  return (
-    <Container style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-      {isOpen && <BottomModal
+
+const GetStartedModal = ({isOpen, setIsOpen, theme}: {isOpen: boolean, setIsOpen: (isOpen: boolean) => void, theme: string | null | undefined}) => {
+  
+  return(
+    <BottomModal
         visible={isOpen}
         onRequestClose={() => {
           console.log("DFVDVDV")
@@ -30,7 +29,7 @@ const OnBoard = () => {
           </View>
           <T.H1>Get Started</T.H1>
           <T>Connect with friends, join chatrooms, and explore conversations that matter to you — all in one place with Swiplet.</T>
-          <Button variant='contain' >Continue with Email</Button>
+          <Button variant='contain' href="Auth/WithEmail/Index">Continue with Email</Button>
           <Button variant='outline' >Continue with Phone</Button>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
             <Button variant='contain' style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
@@ -41,7 +40,16 @@ const OnBoard = () => {
             </Button>
           </View>
         </Box>
-      </BottomModal>}
+      </BottomModal>
+  )
+}
+
+const OnBoard = () => {
+  const theme = useColorScheme()
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <Container style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+      {isOpen && <GetStartedModal isOpen={isOpen} setIsOpen={setIsOpen} theme={theme} />}
       <T.H1>Swiplet</T.H1>
       {
         theme === 'dark' ? <BgOnBoardDark /> : <BgOnBoardLight />

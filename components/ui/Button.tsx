@@ -1,4 +1,4 @@
-import { useTheme } from '@react-navigation/native';
+import { useNavigation, useTheme } from '@react-navigation/native';
 import React from 'react'
 import { Pressable, PressableProps, StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native'
 import { styleMerge } from 'utils/styleMerge';
@@ -65,11 +65,15 @@ const textVariants = sva({
 
 //Button Props
 type ButtonProps = {
-    children: React.ReactNode
+    children: React.ReactNode;
+    href?: string;
 } & PressableProps & VariantProps<typeof buttonVariants> & VariantProps<typeof textVariants>
 
-const Button = ({ children,variant = 'contain',size = 'md',style,...rest  }: ButtonProps) => {
+const Button = ({ children,variant = 'contain',size = 'md',style,href,...rest  }: ButtonProps) => {
     const theme = useColorScheme();
+
+    const nav = useNavigation();
+
     let backgroundColor = undefined;
     let textColor = undefined;
     let borderColor = undefined;
@@ -102,6 +106,7 @@ const Button = ({ children,variant = 'contain',size = 'md',style,...rest  }: But
                 { backgroundColor, borderColor }
             )}
             {...rest}
+            onPress={href ? () => nav.navigate(href as never) : rest.onPress}
         >
             {
                 typeof children === 'string' ? (
