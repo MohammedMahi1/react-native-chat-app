@@ -7,7 +7,7 @@ import sva, {  VariantProps } from 'utils/sva';
 const styles = StyleSheet.create({
     base: {
         paddingVertical: 12,
-        borderRadius: 12,
+        borderRadius: 18,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
