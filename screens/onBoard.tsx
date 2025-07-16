@@ -4,16 +4,17 @@ import Button from 'components/ui/Button'
 import { T } from 'components/ui/Typographies'
 import React from 'react'
 import { ImageBackground, Text, useColorScheme, View } from 'react-native'
+import BackGround from '../assets/onboard/bg-light.svg'
 const OnBoard = () => {
   const theme = useColorScheme()
   
-  const darkImg = require(`../assets/onboard/bg-dark.png`);
-  const lightImg = require(`../assets/onboard/bg-light.png`);
+  const darkImg = require(`../assets/onboard/bg-dark.svg`);
+  const lightImg = require(`../assets/onboard/bg-light.svg`);
   return (
-            <ImageBackground source={theme === 'dark' ? darkImg : lightImg} resizeMode="contain" style={{flex: 1,justifyContent: 'center',}}>
-    <Container style={{ justifyContent: 'space-between', alignItems: 'center' }}>
 
+    <Container style={{ justifyContent: 'space-between', alignItems: 'center' }}>
       <T.H1>Swiplet</T.H1>
+      <BackGround fill={theme === 'dark' ? '#000000' : '#ffffff'}/>
       <View style={{width:'100%',justifyContent:'center',alignItems:'center',gap:20}}>
       <Button >Get Started</Button>
     <View style={{flexDirection:'column',alignItems:'center',width:'100%'}}>
@@ -24,7 +25,6 @@ const OnBoard = () => {
     </View>
       </View>
     </Container>
-            </ImageBackground>
   )
 }
 
