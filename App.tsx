@@ -13,7 +13,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} backgroundColor='transparent' translucent={false}/>
+      <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} backgroundColor={scheme === 'dark' ? '#000000' : '#ffffff'} translucent={false}/>
         <Navigation />
       </NavigationContainer>
     </SafeAreaProvider>

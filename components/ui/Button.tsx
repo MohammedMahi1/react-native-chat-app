@@ -3,6 +3,7 @@ import React from 'react'
 import { Pressable, PressableProps, StyleSheet, Text, TouchableOpacity, useColorScheme } from 'react-native'
 import { styleMerge } from 'utils/styleMerge';
 import sva, {  VariantProps } from 'utils/sva';
+
 const styles = StyleSheet.create({
     base: {
         paddingVertical: 12,
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     countain: {
-        backgroundColor: '#000000',
+        backgroundColor: "#000000",
         color: '#ffffff',
     },
     outline: {

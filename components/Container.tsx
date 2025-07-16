@@ -12,7 +12,7 @@ const Container = ({children,style,scrollEnabled=false,...rest}:ContainerProps) 
     const scheme = useColorScheme();
   return (
     <ScrollView keyboardShouldPersistTaps='handled'  contentContainerStyle={{flex:1}} scrollEnabled={scrollEnabled} {...rest} >
-      <View style={styleMerge(StyleContainer.container,style)} >
+      <View style={styleMerge(StyleContainer.container,style,{backgroundColor:scheme === 'dark' ? '#000000' : '#ffffff'})} >
         {children}
       </View>
     </ScrollView>

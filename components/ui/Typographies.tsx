@@ -1,17 +1,19 @@
-import { Text, TextProps } from "react-native";
+import { Text, TextProps, useColorScheme } from "react-native";
 type TypographiesProps = {
     children: React.ReactNode;
 } & TextProps
 
 export const T = ({children,...rest}: TypographiesProps)=>{
+    const theme = useColorScheme()
     return(
-        <Text {...rest}>{children}</Text>
+        <Text {...rest} style={{color:theme === 'dark' ? '#ffffff' : '#000000'}}>{children}</Text>
     )
 }
 
 const H1 = ({children,...rest}: TypographiesProps)=>{
+    const theme = useColorScheme()
     return(
-        <Text {...rest} style={{fontSize: 36, fontWeight: 'bold'}}>{children}</Text>
+        <Text {...rest} style={{fontSize: 36, fontWeight: 'bold',color:theme === 'dark' ? '#ffffff' : '#000000'}}>{children}</Text>
     )
 }
 
