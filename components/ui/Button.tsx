@@ -68,7 +68,7 @@ type ButtonProps = {
     children: React.ReactNode
 } & PressableProps & VariantProps<typeof buttonVariants> & VariantProps<typeof textVariants>
 
-const Button = ({ children,variant = 'contain',size = 'md',...rest  }: ButtonProps) => {
+const Button = ({ children,variant = 'contain',size = 'md',style,...rest  }: ButtonProps) => {
     const theme = useColorScheme();
     let backgroundColor = undefined;
     let textColor = undefined;
@@ -97,7 +97,7 @@ const Button = ({ children,variant = 'contain',size = 'md',...rest  }: ButtonPro
 
     return (
         <Pressable
-            style={styleMerge(
+            style={styleMerge(style,
                 buttonVariants({ variant }),
                 { backgroundColor, borderColor }
             )}
