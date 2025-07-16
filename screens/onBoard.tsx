@@ -3,11 +3,16 @@ import Link from 'components/Link'
 import Button from 'components/ui/Button'
 import { T } from 'components/ui/Typographies'
 import React from 'react'
-import { Text, View } from 'react-native'
-
+import { ImageBackground, Text, useColorScheme, View } from 'react-native'
 const OnBoard = () => {
+  const theme = useColorScheme()
+  
+  const darkImg = require(`../assets/onboard/bg-dark.png`);
+  const lightImg = require(`../assets/onboard/bg-light.png`);
   return (
+            <ImageBackground source={theme === 'dark' ? darkImg : lightImg} resizeMode="contain" style={{flex: 1,justifyContent: 'center',}}>
     <Container style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+
       <T.H1>Swiplet</T.H1>
       <View style={{width:'100%',justifyContent:'center',alignItems:'center',gap:20}}>
       <Button >Get Started</Button>
@@ -19,6 +24,7 @@ const OnBoard = () => {
     </View>
       </View>
     </Container>
+            </ImageBackground>
   )
 }
 
