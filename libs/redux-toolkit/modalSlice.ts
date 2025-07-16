@@ -1,12 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState ={}
+type ModalState = {
+    modals:{[key: string]: boolean};
+}
+
+
+const initialState: ModalState={
+    modals:{}
+}
 
 
 const modalSlice = createSlice({
     name: "modal",
     initialState,
-    reducers: {}
+    reducers: {
+        openModal: (state, action: PayloadAction<string>) => {
+          state.modals[action.payload] = true;
+        },
+        closeModal: (state, action: PayloadAction<string>) => {
+          state.modals[action.payload] = false;
+        },
+      },
 })
 
+export const { openModal, closeModal } = modalSlice.actions;
 export default modalSlice;

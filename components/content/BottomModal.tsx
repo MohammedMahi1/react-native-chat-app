@@ -1,14 +1,17 @@
 import React from 'react'
 import { Modal, ModalProps, SafeAreaView, Text, useColorScheme, View } from 'react-native'
 import * as NavigationBar from 'expo-navigation-bar';
+import { useAppDispatch, useAppSelector } from 'hooks/hook';
 
 type BottomModalProps = ModalProps & {
-    children: React.ReactNode
+    children: React.ReactNode;
+    id: string;
 }
 
-const BottomModal = ({ children, ...props }: BottomModalProps) => {
+const BottomModal = ({ children,id, ...props }: BottomModalProps) => {
     const scheme = useColorScheme();
-
+    const dispatch = useAppDispatch();
+    const isOpen = useAppSelector((state) => state.modal.modals[id]);
 
     return (
         <Modal
