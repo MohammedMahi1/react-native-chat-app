@@ -34,14 +34,24 @@ const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsO
         </View>
         <T.H1>Get Started</T.H1>
         <T>Connect with friends, join chatrooms, and explore conversations that matter to you — all in one place with Swiplet.</T>
-        <Button variant='contain' 
-        onPress={() => {
-          dispatch(closeModal('get-started'));
-          nav.navigate("Auth/WithEmail/EmailScreen" as never);
-        }
-          }  
-          >Continue with Email</Button>
-        <Button variant='outline' >Continue with Phone</Button>
+        <Button variant='contain'
+          onPress={() => {
+            dispatch(closeModal('get-started'));
+            nav.navigate("Auth/WithEmail/EmailScreen" as never);
+          }
+          }
+        >
+          Continue with Email
+        </Button>
+        <Button variant='outline'
+          onPress={() => {
+            dispatch(closeModal('get-started'));
+            nav.navigate("Auth/WithPhone/PhoneScreen" as never);
+          }
+          }
+        >
+          Continue with Phone
+        </Button>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
           <Button variant='contain' style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
             <AntDesign name="google" size={32} color={theme === "dark" ? "black" : "white"} />

@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useColorScheme } from 'react-native';
 import EmailScreen from 'screens/auth/with-email/EmailScreen';
+import PhoneScreen from 'screens/auth/with-phone/PhoneScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ const Navigation = () => {
     >
         <Stack.Screen name="OnBoard" component={OnBoard} />
         <Stack.Screen name="Auth/WithEmail/EmailScreen" component={EmailScreen} />
+        <Stack.Screen name="Auth/WithPhone/PhoneScreen" component={PhoneScreen} />
         <Stack.Screen name="TabsNavigator" component={TabsNavigator} />
     </Stack.Navigator>
     </SafeAreaView>
