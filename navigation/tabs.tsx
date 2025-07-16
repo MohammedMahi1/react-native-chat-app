@@ -10,7 +10,6 @@ const Tab = createBottomTabNavigator();
 const TabsNavigator = () => {
   const scheme = useColorScheme();
     return (
-      <SafeAreaView style={{flex: 1}}>
         <Tab.Navigator
         screenOptions={{
           headerShown: false,
@@ -26,7 +25,6 @@ const TabsNavigator = () => {
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Cart" component={Cart} />
       </Tab.Navigator>
-        </SafeAreaView>
     );
 };
 
