@@ -66,10 +66,9 @@ const textVariants = sva({
 //Button Props
 type ButtonProps = {
     children: React.ReactNode;
-    href?: string;
 } & PressableProps & VariantProps<typeof buttonVariants> & VariantProps<typeof textVariants>
 
-const Button = ({ children,variant = 'contain',size = 'md',style,href,...rest  }: ButtonProps) => {
+const Button = ({children,variant = 'contain',size = 'md',style,...rest  }: ButtonProps) => {
     const theme = useColorScheme();
 
     const nav = useNavigation();
@@ -106,7 +105,6 @@ const Button = ({ children,variant = 'contain',size = 'md',style,href,...rest  }
                 { backgroundColor, borderColor }
             )}
             {...rest}
-            onPress={href ? () => nav.navigate(href as never) : rest.onPress}
         >
             {
                 typeof children === 'string' ? (

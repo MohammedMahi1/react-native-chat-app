@@ -5,7 +5,7 @@ import TabsNavigator from './tabs';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useColorScheme } from 'react-native';
-import index from 'screens/auth/with-email';
+import EmailScreen from 'screens/auth/with-email/EmailScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,7 +29,7 @@ const Navigation = () => {
     })}
     >
         <Stack.Screen name="OnBoard" component={OnBoard} />
-        <Stack.Screen name="Auth/WithEmail/Index" component={index} />
+        <Stack.Screen name="Auth/WithEmail/EmailScreen" component={EmailScreen} />
         <Stack.Screen name="TabsNavigator" component={TabsNavigator} />
     </Stack.Navigator>
     </SafeAreaView>

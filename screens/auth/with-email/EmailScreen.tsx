@@ -2,7 +2,7 @@ import Container from 'components/Container'
 import { T } from 'components/ui/Typographies'
 import React from 'react'
 
-const index = () => {
+const EmailScreen = () => {
   return (
     <Container>
       <T.H1>Sign up with Email</T.H1>
@@ -10,4 +10,4 @@ const index = () => {
   )
 }
 
-export default index
+export default EmailScreen
