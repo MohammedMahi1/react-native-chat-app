@@ -9,6 +9,7 @@ import { useState } from 'react'
 import BottomModal from 'components/content/BottomModal'
 import Box from 'components/Box'
 import { AntDesign } from '@expo/vector-icons'
+import IconTip from 'components/ui/IconTip'
 const OnBoard = () => {
   const theme = useColorScheme()
   const [isOpen, setIsOpen] = useState(false)
@@ -25,7 +26,7 @@ const OnBoard = () => {
             {
               theme === 'dark' ? <Image source={require("../assets/round-logo-dark.png")}/> : <Image source={require("../assets/round-logo-light.png")}/>
             }
-            
+            <IconTip/>
           </View>
           <T.H1>Get Started</T.H1>
           <T>Connect with friends, join chatrooms, and explore conversations that matter to you — all in one place with Swiplet.</T>
