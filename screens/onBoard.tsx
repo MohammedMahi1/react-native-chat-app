@@ -8,7 +8,7 @@ import BgOnBoardLight from '../assets/onboard/bg-light.svg'
 import { useState } from 'react'
 import BottomModal from 'components/content/BottomModal'
 import Box from 'components/Box'
-import { AntDesign } from '@expo/vector-icons'
+import { AntDesign, FontAwesome } from '@expo/vector-icons'
 import IconTip from 'components/ui/IconTip'
 const OnBoard = () => {
   const theme = useColorScheme()
@@ -18,26 +18,26 @@ const OnBoard = () => {
       {isOpen && <BottomModal
         visible={isOpen}
         onRequestClose={() => {
-          setIsOpen(false);
+          console.log("DFVDVDV")
         }}
       >
-        <Box style={{ padding: 20, borderRadius: 10,gap:10, borderColor: theme === 'dark' ? '#222222' : '#E0E0E0', borderWidth: 1 }}>
-          <View>
+        <Box style={{ padding: 18, borderRadius: 18, gap: 10, borderColor: theme === 'dark' ? '#222222' : '#E0E0E0', borderWidth: 1 }}>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
             {
-              theme === 'dark' ? <Image source={require("../assets/round-logo-dark.png")}/> : <Image source={require("../assets/round-logo-light.png")}/>
+              theme === 'dark' ? <Image source={require("../assets/round-logo-dark.png")} /> : <Image source={require("../assets/round-logo-light.png")} />
             }
-            <IconTip/>
+            <IconTip onPress={() => setIsOpen(false)} />
           </View>
           <T.H1>Get Started</T.H1>
           <T>Connect with friends, join chatrooms, and explore conversations that matter to you — all in one place with Swiplet.</T>
-          <Button variant='contain' onPress={() => setIsOpen(false)}>Continue with Email</Button>
-          <Button variant='outline' onPress={() => setIsOpen(false)}>Continue with Phone</Button>
+          <Button variant='contain' >Continue with Email</Button>
+          <Button variant='outline' >Continue with Phone</Button>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <Button variant='contain' style={{flex:1,justifyContent:"center",alignItems:"center"}} onPress={() => setIsOpen(false)}>
-              <AntDesign name="google" size={32} color={theme === "dark"?"black":"white"} />
+            <Button variant='contain' style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
+              <AntDesign name="google" size={32} color={theme === "dark" ? "black" : "white"} />
             </Button>
-            <Button variant='contain' style={{flex:1,justifyContent:"center",alignItems:"center"}} onPress={() => setIsOpen(false)}>
-              <AntDesign name="google" size={32} color={theme === "dark"?"black":"white"} />
+            <Button variant='contain' style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+              <FontAwesome name="facebook" size={32}  color={theme === "dark" ? "black" : "white"}/>
             </Button>
           </View>
         </Box>

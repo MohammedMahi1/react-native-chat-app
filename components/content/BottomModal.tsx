@@ -18,7 +18,7 @@ const BottomModal = ({ children, ...props }: BottomModalProps) => {
             statusBarTranslucent={true}
             navigationBarTranslucent={true}
         >
-            <View style={{ padding:24,justifyContent: 'flex-end',width:"100%",flex: 1,backgroundColor: '#00000040' }}>
+            <View style={{ padding:24,justifyContent: 'flex-end',width:"100%",flex: 1 }}>
                 {children}
             </View>
         </Modal>

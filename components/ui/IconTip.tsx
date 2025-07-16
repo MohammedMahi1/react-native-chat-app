@@ -16,7 +16,7 @@ const IconTip = ({size = 24,...rest}:IconTipProps) => {
         justifyContent: "center",
         borderRadius: size * 2,
     }} {...rest}>
-        <AntDesign name="close" size={size} color={theme === "dark" ?"#525252":"$A3A3A3"}/>
+        <AntDesign name="close" size={size} color={theme === "dark" ?"#525252":"#A3A3A3"}/>
     </Pressable>
   )
 }
