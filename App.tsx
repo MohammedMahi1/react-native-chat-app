@@ -8,6 +8,7 @@ import TabsNavigator from 'navigation/tabs';
 import { StatusBar } from 'expo-status-bar';
 import { Provider } from 'react-redux';
 import { store } from 'store/store';
+import AuthFlow from 'navigation/authFlow';
 export default function App() {
   const scheme = useColorScheme();
   return (
@@ -20,6 +21,8 @@ export default function App() {
       backgroundColor={scheme === 'dark' ? '#000000' : '#ffffff'} 
       translucent={false}/>
         <Navigation />
+
+
       </NavigationContainer>
     </SafeAreaProvider>
       </Provider>

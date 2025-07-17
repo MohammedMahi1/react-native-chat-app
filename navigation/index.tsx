@@ -7,8 +7,14 @@ import * as NavigationBar from 'expo-navigation-bar';
 import { useColorScheme } from 'react-native';
 import {EmailScreen} from 'screens/auth/with-email/EmailScreen';
 import PhoneScreen from 'screens/auth/with-phone/PhoneScreen';
+import AuthFlow from './authFlow';
+export type RootStackParamList = {
+  OnBoard: undefined;
+  TabsNavigator: undefined;
+  Auth: undefined; // 👈 this will point to AuthFlow
+};
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 
 const Navigation = () => {
@@ -30,10 +36,10 @@ const Navigation = () => {
     })}
     >
         <Stack.Screen name="OnBoard" component={OnBoard} />
-        <Stack.Screen name="Auth/WithEmail/EmailScreen" component={EmailScreen} />
-        <Stack.Screen name="Auth/WithPhone/PhoneScreen" component={PhoneScreen} />
         <Stack.Screen name="TabsNavigator" component={TabsNavigator} />
+        <Stack.Screen name="Auth" component={AuthFlow} />
     </Stack.Navigator>
+
     </SafeAreaView>
   );
 };

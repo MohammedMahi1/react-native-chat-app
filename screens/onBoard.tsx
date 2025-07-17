@@ -12,17 +12,17 @@ import IconTip from 'components/ui/IconTip'
 import { useAppDispatch, useAppSelector } from 'hooks/hook'
 import { closeModal, openModal } from 'libs/redux-toolkit/modalSlice'
 import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from 'navigation'
+import { AuthStackParamList } from 'navigation/authFlow'
 
 const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsOpen: () => void, theme: string | null | undefined }) => {
   const dispatch = useAppDispatch();
-  const nav = useNavigation();
+  const nav = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <BottomModal
       id='get-started'
       visible={isOpen}
-      onRequestClose={() => {
-        console.log("DFVDVDV")
-      }}
     >
       <Box style={{ padding: 18, borderRadius: 18, gap: 10, borderColor: theme === 'dark' ? '#222222' : '#E0E0E0', borderWidth: 1 }}>
         <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -36,7 +36,7 @@ const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsO
         <Button variant='contain'
           onPress={() => {
             dispatch(closeModal('get-started'));
-            nav.navigate("Auth/WithEmail/EmailScreen" as never);
+            nav.navigate("Auth");
           }
           }
         >
