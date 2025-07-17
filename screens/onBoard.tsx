@@ -1,5 +1,5 @@
 import Container from 'components/Container'
-import Link from 'components/Link'
+import Link from 'components/navigation/Link'
 import Button from 'components/ui/Button'
 import { T } from 'components/ui/Typographies'
 import { Image, useColorScheme, View } from 'react-native'

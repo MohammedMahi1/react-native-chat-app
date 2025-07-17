@@ -1,6 +1,6 @@
 import { FontAwesome6 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import Link from 'components/Link';
+import Link from 'components/navigation/Link';
 import { T } from 'components/ui/Typographies';
 import React from 'react'
 import { Image, Pressable,  useColorScheme, View } from 'react-native'
