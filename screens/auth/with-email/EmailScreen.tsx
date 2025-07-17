@@ -3,6 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import Container from 'components/Container'
 import ScreensSwipie from 'components/content/ScreensSwipie'
 import Button from 'components/ui/Button'
+import Input from 'components/ui/Input'
 import { T } from 'components/ui/Typographies'
 import { RootStackParamList } from 'navigation'
 import { AuthStackParamList } from 'navigation/authFlow'
@@ -39,6 +40,7 @@ const BodyEmail = () => {
   const nav = useNavigation<StackNavigationProp<AuthStackParamList>>();
   return (
     <>
+      <Input placeholder="Email" />
       <Button onPress={() => nav.navigate("Password")}>Continue</Button>
     </>
   )
