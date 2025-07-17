@@ -5,7 +5,7 @@ import TabsNavigator from './tabs';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useColorScheme } from 'react-native';
-import EmailScreen from 'screens/auth/with-email/EmailScreen';
+import {EmailScreen} from 'screens/auth/with-email/EmailScreen';
 import PhoneScreen from 'screens/auth/with-phone/PhoneScreen';
 
 const Stack = createStackNavigator();

@@ -5,7 +5,6 @@ import { T } from 'components/ui/Typographies'
 import { Image, useColorScheme, View } from 'react-native'
 import BgOnBoardDark from '../assets/onboard/bg-dark.svg'
 import BgOnBoardLight from '../assets/onboard/bg-light.svg'
-import { useState } from 'react'
 import BottomModal from 'components/content/BottomModal'
 import Box from 'components/Box'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
@@ -77,7 +76,7 @@ const OnBoard = () => {
         theme === 'dark' ? <BgOnBoardDark /> : <BgOnBoardLight />
       }
       <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-        <Button variant='outline' onPress={() => dispatch(openModal('get-started'))}>Get Started</Button>
+        <Button variant='contain' onPress={() => dispatch(openModal('get-started'))}>Get Started</Button>
         <View style={{ flexDirection: 'column', alignItems: 'center', width: '100%' }}>
           <T.Span style={{ textAlign: 'center', fontSize: 14, color: '#A3A3A3' }}>
             Hi I’m Mohammed Mahi, Checkout my profile on GitHub,
