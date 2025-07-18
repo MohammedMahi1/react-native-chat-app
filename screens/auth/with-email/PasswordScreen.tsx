@@ -1,7 +1,11 @@
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 import Container from 'components/Container'
 import ScreensSwipie from 'components/content/ScreensSwipie'
 import Button from 'components/ui/Button'
+import Input from 'components/ui/Input'
 import { T } from 'components/ui/Typographies'
+import { AuthStackParamList } from 'navigation/authFlow'
 import { View } from 'react-native'
 
 const HeaderPassword = () => {
@@ -14,8 +18,12 @@ const HeaderPassword = () => {
   )
 }
 const BodyPassword = () => {
+  const nav = useNavigation<StackNavigationProp<AuthStackParamList>>();
   return (
-      <Button>Continue</Button>
+    <>
+      <Input placeholder="Password" />
+      <Button onPress={() => nav.navigate("VerifyCode")}>Continue</Button>
+    </>
   )
 }
 export const PasswordScreen = () => {

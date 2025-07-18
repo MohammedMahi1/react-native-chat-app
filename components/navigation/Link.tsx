@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import  { ReactNode } from 'react'
-import { Linking, Text, TextProps } from 'react-native'
+import { Linking, Text, TextProps, useColorScheme } from 'react-native'
 
 type LinkProps = {
     children:ReactNode;
