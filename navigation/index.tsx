@@ -21,7 +21,7 @@ const Navigation = () => {
   const scheme = useColorScheme();
 
   NavigationBar.setBackgroundColorAsync(scheme === 'dark' ? '#000000' : '#ffffff');
-
+  const isAuth = false;
   return (
     <SafeAreaView style={{flex: 1}}>
 
@@ -35,9 +35,17 @@ const Navigation = () => {
       },
     })}
     >
-        <Stack.Screen name="OnBoard" component={OnBoard} />
-        <Stack.Screen name="TabsNavigator" component={TabsNavigator} />
-        <Stack.Screen name="Auth" component={AuthFlow} />
+
+        {
+          isAuth ?
+          <Stack.Screen name="TabsNavigator" component={TabsNavigator} /> :
+          
+            <>
+              <Stack.Screen name="OnBoard" component={OnBoard} />
+              <Stack.Screen name="Auth" component={AuthFlow} />
+           </>
+        
+        }
     </Stack.Navigator>
 
     </SafeAreaView>
