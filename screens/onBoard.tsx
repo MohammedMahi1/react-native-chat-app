@@ -14,7 +14,7 @@ import { closeModal, openModal } from 'libs/redux-toolkit/modalSlice'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from 'navigation'
-import { AuthStackParamList } from 'navigation/authFlow'
+import { AuthStackParamList } from 'navigation/auth-route/authFlowEmail'
 
 const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsOpen: () => void, theme: string | null | undefined }) => {
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsO
         <Button variant='contain'
           onPress={() => {
             dispatch(closeModal('get-started'));
-            nav.navigate("Auth");
+            nav.navigate("AuthEmail");
           }
           }
         >
@@ -45,7 +45,7 @@ const GetStartedModal = ({ isOpen, setIsOpen, theme }: { isOpen: boolean, setIsO
         <Button variant='outline'
           onPress={() => {
             dispatch(closeModal('get-started'));
-            nav.navigate("Auth/WithPhone/PhoneScreen" as never);
+            nav.navigate("AuthPhone");
           }
           }
         >

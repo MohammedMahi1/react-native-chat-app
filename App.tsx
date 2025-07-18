@@ -8,7 +8,7 @@ import TabsNavigator from 'navigation/tabs';
 import { StatusBar } from 'expo-status-bar';
 import { Provider } from 'react-redux';
 import { store } from 'store/store';
-import AuthFlow from 'navigation/authFlow';
+import AuthFlow from 'navigation/auth-route/authFlowEmail';
 export default function App() {
   const scheme = useColorScheme();
   return (

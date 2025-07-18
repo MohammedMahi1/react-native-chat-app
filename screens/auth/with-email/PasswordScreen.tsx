@@ -5,7 +5,7 @@ import ScreensSwipie from 'components/content/ScreensSwipie'
 import Button from 'components/ui/Button'
 import Input from 'components/ui/Input'
 import { T } from 'components/ui/Typographies'
-import { AuthStackParamList } from 'navigation/authFlow'
+import { AuthStackParamList } from 'navigation/auth-route/authFlowEmail'
 import { View } from 'react-native'
 
 const HeaderPassword = () => {

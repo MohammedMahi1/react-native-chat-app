@@ -5,13 +5,15 @@ import TabsNavigator from './tabs';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as NavigationBar from 'expo-navigation-bar';
 import { useColorScheme } from 'react-native';
-import {EmailScreen} from 'screens/auth/with-email/EmailScreen';
-import PhoneScreen from 'screens/auth/with-phone/PhoneScreen';
-import AuthFlow from './authFlow';
+import AuthFlowEmail from './auth-route/authFlowEmail';
+import AuthFlowPhone from './auth-route/authFlowPhone';
+
+
 export type RootStackParamList = {
   OnBoard: undefined;
   TabsNavigator: undefined;
-  Auth: undefined; // 👈 this will point to AuthFlow
+  AuthEmail: undefined;
+  AuthPhone: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -42,7 +44,8 @@ const Navigation = () => {
           
             <>
               <Stack.Screen name="OnBoard" component={OnBoard} />
-              <Stack.Screen name="Auth" component={AuthFlow} />
+              <Stack.Screen name="AuthEmail" component={AuthFlowEmail} />
+              <Stack.Screen name="AuthPhone" component={AuthFlowPhone} />
            </>
         
         }
