@@ -10,8 +10,8 @@ import { AuthStackParamList } from "navigation/authFlow";
 const HeaderPassword = () => {
     return (
       <>
-        <T.H1>Verify Code</T.H1>
-          <T.Span>Enter the code sent to your email.</T.Span>
+        <T.H1>Full Name</T.H1>
+          <T.Span>Enter your full name to continue.</T.Span>
   
       </>
     )
@@ -20,15 +20,16 @@ const HeaderPassword = () => {
     const nav = useNavigation<StackNavigationProp<AuthStackParamList>>();
     return (
       <>
-        <Input placeholder="Code" />
-        <Button onPress={() => nav.navigate("FullName")}>Continue</Button>
+        <Input placeholder="Full Name" />
+        <Button onPress={() => nav.navigate("VerifyCode")}>Continue</Button>
       </>
     )
   }
-  export const VerifyCode = () => {
+  export const FullNameScreen = () => {
     return (
       <Container>
         <ScreensSwipie
+        iconed={false}
           header={<HeaderPassword />}
           body={<BodyPassword />} />
       </Container>
